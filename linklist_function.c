@@ -25,7 +25,7 @@ void insertNode(int data){
 
 void printlist(){
     if(head == NULL){
-        printf("Linklist不存在\n");
+        printf("Linkedlist不存在\n");
         return;
     }
     else{
@@ -41,7 +41,7 @@ void printlist(){
 
 void deleteNode(int data){
     if(head == NULL){
-        printf("Linklist 不存在\n");
+        printf("Linkedlist 不存在\n");
     }
     struct Node *temp = head;
     struct Node *prev = NULL;
@@ -56,7 +56,7 @@ void deleteNode(int data){
         temp = temp->next;
     }
     if(temp == NULL){
-        printf("Linklist 中找不到%d\n",data);
+        printf("Linkedlist 中找不到%d\n",data);
         return;
     }
     prev->next = temp->next;
@@ -65,6 +65,15 @@ void deleteNode(int data){
 }
 
 void freeList(){
-
-    
+    if(head == NULL){
+        printf("Linkedlist 不存在\n");
+        return;
+    }
+    while(head != NULL){
+        struct Node *temp = head;
+        head = head->next;
+        free(temp);
+    }
+    head = NULL; // 確保 head 指向 NULL
+    printf("已刪除Linkedlist\n");
 }
