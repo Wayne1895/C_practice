@@ -5,8 +5,9 @@ struct Node{
     int data;
     struct Node *next;
 };
+struct Node *head = NULL;
 
-void insertNode(int data){
+void insertNode(struct Nodeint data){
     struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = NULL;
@@ -15,7 +16,7 @@ void insertNode(int data){
         head = newNode;
     }
     else{
-        struct Node *temp = haed;
+        struct Node *temp = head;
         while(temp->next){
             temp = temp->next;
         }
@@ -42,6 +43,7 @@ void printlist(){
 void deleteNode(int data){
     if(head == NULL){
         printf("Linkedlist 不存在\n");
+        return;
     }
     struct Node *temp = head;
     struct Node *prev = NULL;
