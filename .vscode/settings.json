@@ -62,6 +62,7 @@
     "string_view": "cpp",
     "initializer_list": "cpp",
     "utility": "cpp",
-    "stack_bylinkedlist.h": "c"
+    "stack_bylinkedlist.h": "c",
+    "ostream": "cpp"
   }
 }
