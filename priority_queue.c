@@ -38,7 +38,15 @@ void push(PriorityQueue *pq ,int priority, int data){
     EnsureCapacity(pq);
     int i = pq->size++;
     pq->heap[i].priority = priority; // (*(pq->heap + i )).priority
-    (pq->heap+i)->data = data; 
+    (pq->heap+i)->data = data; //pq->heap[i] ≡ *(pq->heap + i)
 
-    
+    //heapify (bottom up)
+    while(i > 0){
+        int parent = (i-1)/2;
+        if(pq->heap[i].priority > pq->heap[parent].priority){
+           swap(&pq->heap[i], &pq->heap[parent]); //swap(pq.heap+i, pq.heap+parent);
+           i = parent;
+        }
+        else break;
+    }
 }
