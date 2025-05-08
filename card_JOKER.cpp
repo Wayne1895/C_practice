@@ -182,4 +182,5 @@ int f(const vector<int>& input){
     if(isTwoPair){return 8;}
     if(isOnePair){return 9;}
     return 10;
+
 }
