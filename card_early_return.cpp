@@ -83,5 +83,4 @@ int f(const vector<int>& input){
     if(isThreeofakind){return 7;}
     if(isOnePair){return 9;}
     return 10;  
-
 }
